@@ -1,4 +1,0 @@
-<!ELEMENT persistence (persistence-unit)>
-<!ATTLIST persistence version NMTOKEN #REQUIRED>
-<!ELEMENT persistence-unit (#PCDATA)>
-<!ATTLIST persistence-unit name NMTOKEN #REQUIRED>
