@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+/*Está aqui é nossa classe persistente*/
 @Entity
 public class UsuarioSpringData {
 
