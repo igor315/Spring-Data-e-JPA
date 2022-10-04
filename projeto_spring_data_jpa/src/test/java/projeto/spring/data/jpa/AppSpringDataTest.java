@@ -73,5 +73,15 @@ public class AppSpringDataTest {
 		
 		interfaceSpringDataUser.save(data);
 	}
+	
+	@Test
+	public void testeDelete() {
+		
+		/*pode passar diretamente pelo o id*/
+		/*interfaceSpringDataUser.deleteById(7L);*/
+		
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(4L);
+		interfaceSpringDataUser.delete(usuarioSpringData.get());
+	}
 
 }
