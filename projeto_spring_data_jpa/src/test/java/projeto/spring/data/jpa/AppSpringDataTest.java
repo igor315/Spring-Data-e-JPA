@@ -62,5 +62,16 @@ public class AppSpringDataTest {
 			System.out.println(usuarioSpringData.getSenha());
 		}
 	}
+	
+	@Test
+	public void testeUpdate () {
+		
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(3L);
+		
+		UsuarioSpringData data = usuarioSpringData.get();
+		data.setSenha("@martins257");
+		
+		interfaceSpringDataUser.save(data);
+	}
 
 }
