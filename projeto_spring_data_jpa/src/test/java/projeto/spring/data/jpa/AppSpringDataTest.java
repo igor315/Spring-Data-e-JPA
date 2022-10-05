@@ -24,10 +24,10 @@ public class AppSpringDataTest {
 
 		/* Insancia um novo usuario e seta os dados */
 		UsuarioSpringData usuarioSpringData = new UsuarioSpringData();
-		usuarioSpringData.setEmail("Alexsotwaredeveloper@.com");
+		usuarioSpringData.setEmail("Alexalexsotwaredeveloper@.com");
 		usuarioSpringData.setLogin("developer 123");
 		usuarioSpringData.setSenha("321");
-		usuarioSpringData.setNome("Alex Fernando");
+		usuarioSpringData.setNome("Alex alex alex");
 
 		/* Salvamos todos os dados */
 		interfaceSpringDataUser.save(usuarioSpringData);
@@ -112,6 +112,13 @@ public class AppSpringDataTest {
 		System.out.println(usuarioSpringData.getLogin());
 		System.out.println(usuarioSpringData.getSenha());
 
+	}
+	
+	@Test
+	public void testeDeletePorNome() {
+		
+		interfaceSpringDataUser.deletePorNome("Alex alex alex");
+		
 	}
 
 }
