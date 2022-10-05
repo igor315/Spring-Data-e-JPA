@@ -100,4 +100,18 @@ public class AppSpringDataTest {
 
 	}
 
+	@Test
+	public void testeConsultaNomeParam() {
+		
+		/*A busca tem que ser exatamente igual como esta no banco de dados*/
+		UsuarioSpringData usuarioSpringData = interfaceSpringDataUser.buscaPorNomeParam("Joao Gomes");
+
+		System.out.println(usuarioSpringData.getId());
+		System.out.println(usuarioSpringData.getEmail());
+		System.out.println(usuarioSpringData.getNome());
+		System.out.println(usuarioSpringData.getLogin());
+		System.out.println(usuarioSpringData.getSenha());
+
+	}
+
 }
