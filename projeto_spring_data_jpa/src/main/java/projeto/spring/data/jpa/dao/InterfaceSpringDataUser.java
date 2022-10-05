@@ -29,7 +29,7 @@ public interface InterfaceSpringDataUser extends CrudRepository<UsuarioSpringDat
 	
 	/*O metodo delete precisa dessas tres anotacoes para funcionar caso contrario dara erro*/
 	@Modifying
-	@Transactional(rollbackFor = NullPointerException.class)// rollbackFor caso aconteca algum nullpointer essa transacao sera revertida. Por padrao o Transactional sempre da rolback em caso de falhas
+	@Transactional
 	@Query(value = "delete from UsuarioSpringData u where u.nome = ?1")
 	public void deletePorNome(String nome);
 	

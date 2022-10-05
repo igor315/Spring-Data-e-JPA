@@ -3,5 +3,6 @@
 	http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 		<persistence-unit name="projeto_spring_data_jpa">
 			<class>projeto.spring.data.jpa.model.UsuarioSpringData</class>
+			<class>projeto.spring.data.jpa.model.Telefone</class>
 		</persistence-unit>
 	</persistence>
