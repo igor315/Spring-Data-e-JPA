@@ -120,5 +120,12 @@ public class AppSpringDataTest {
 		interfaceSpringDataUser.deletePorNome("Alex alex alex");
 		
 	}
+	
+	@Test
+	public void testeUpdatePorNome() {
+		
+		/*Leve em consideracao letras Maiusculas e Minusculas na hora de passar o nome*/
+		interfaceSpringDataUser.updateEmailPorNome("testeemailspringdata@gmail.com.br", "Fernando Valerio Martins");
+	}
 
 }

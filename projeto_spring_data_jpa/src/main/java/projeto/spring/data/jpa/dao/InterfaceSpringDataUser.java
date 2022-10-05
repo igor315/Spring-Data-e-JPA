@@ -18,6 +18,7 @@ public interface InterfaceSpringDataUser extends CrudRepository<UsuarioSpringDat
 	@Query(value = "select p from UsuarioSpringData p where p.nome like %?1%")
 	public List<UsuarioSpringData> buscaPorNome(String nome);
 
+	
 	/*Aqui tem que ser examatamente igual o nome passado no parametro*/
 	@Query(value = "select p from UsuarioSpringData p where p.nome = :paranome")
 	public UsuarioSpringData buscaPorNomeParam(@Param("paranome") String paranome);
@@ -28,5 +29,11 @@ public interface InterfaceSpringDataUser extends CrudRepository<UsuarioSpringDat
 	@Transactional
 	@Query(value = "delete from UsuarioSpringData u where u.nome = ?1")
 	public void deletePorNome(String nome);
+	
+	
+	@Modifying
+	@Transactional
+	@Query(value = "update UsuarioSpringData u set u.email = ?1 where u.nome = ?2")
+	public void updateEmailPorNome(String email, String nome);
 
 }
