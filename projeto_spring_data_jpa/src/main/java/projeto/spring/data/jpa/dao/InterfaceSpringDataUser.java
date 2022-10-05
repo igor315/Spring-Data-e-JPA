@@ -1,8 +1,10 @@
 package projeto.spring.data.jpa.dao;
 
-import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.LockModeType;
+
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -22,6 +24,7 @@ public interface InterfaceSpringDataUser extends CrudRepository<UsuarioSpringDat
 
 	
 	/*Aqui tem que ser examatamente igual o nome passado no parametro*/
+	@Lock(LockModeType.READ)//não deixa atualizar usuario quando tem alguem consultando o usuario
 	@Transactional(readOnly = true)//readOnly true faz com que esse metodo seja apenas de leitura e nunca efetue uma alteracao no banco de dados
 	@Query(value = "select p from UsuarioSpringData p where p.nome = :paranome")
 	public UsuarioSpringData buscaPorNomeParam(@Param("paranome") String paranome);
